@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <title>Alien Loot</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body id="inicio">
+  <header>
+    <div class="container header-container" >
+      <div class="logo-title">
+        <img src="assets/logo.png" alt="Alien Loot Logo" class="logo" />
+        <h1>Alien Loot</h1>
+      </div>
+      <nav>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="https://api.whatsapp.com/send/?phone=5493518052252" target="_blank" rel="noopener noreferrer">Contacto</a></li>
+    <li>
+      <a href="#carrito" class="boton-carrito-visual" aria-label="Ir al carrito">
+        🛒
+      </a>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Ofertas fuera de este mundo</h2>
+      <p>¡Tecnología y gadgets que parecen de otro planeta!</p>
+      <a href="#productos" class="btn">Ver productos</a>
+    </section>
+
+    <section id="productos" class="productos">
+      <h3>Nuestros Productos</h3>
+
+      <!-- Filtros -->
+      <div class="filtros-container" style="display:flex; gap:15px; justify-content:center; margin-bottom: 30px; flex-wrap: wrap;">
+        <select id="filtro-marca">
+          <option value="">Todas las marcas</option>
+        </select>
+
+        <select id="filtro-tipo">
+          <option value="">Todos los tipos</option>
+        </select>
+
+        <input type="text" id="buscador" placeholder="Buscar productos..." style="padding: 10px 15px; border-radius:6px; border:none; max-width:300px; flex-grow:1;" />
+
+        <button id="btn-limpiar" style="padding: 10px 20px; border-radius:6px; border:none; background-color:#39ff14; color: black; cursor:pointer; font-weight:600;">Limpiar filtros</button>
+      </div>
+
+      <div class="grid-productos"></div>
+    </section>
+
+    <section id="carrito" class="carrito-panel oculto">
+  <h3>Tu carrito</h3>
+  <div class="items-carrito">
+    <p>Tu carrito está vacío.</p>
+  </div>
+  <div class="carrito-footer">
+    <p>Total: <span id="total-carrito">$0</span></p>
+    <button id="vaciar-carrito" class="btn">Vaciar carrito</button>
+    <a id="enviar-whatsapp" href="#" target="_blank" class="btn btn-whatsapp">Enviar pedido por WhatsApp</a>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alien Loot. Todos los derechos reservados.</p>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>
