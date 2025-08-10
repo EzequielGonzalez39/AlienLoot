@@ -386,3 +386,86 @@ footer {
   background-color: #333;
   color: #e0e0e0;
 }
+
+
+
+/* aca va lo nuevo */
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+
+  /* Header compacto */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo-title {
+    gap: 8px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .logo-title h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Menú vertical */
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .nav-links li a {
+    font-size: 0.95rem;
+  }
+
+  /* Padding general para que no pegue al borde */
+  body {
+    padding-top: 120px; /* aumenta un poco porque el header es más alto en mobile */
+  }
+
+  /* Filtros apilados */
+  .filtros-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 10px;
+  }
+
+  .filtros-container select,
+  .filtros-container input,
+  .filtros-container button {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Grid: dos productos por fila en móvil */
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* Ajuste de producto para que quepan dos por fila */
+  .producto img {
+    height: 140px;
+  }
+
+  .producto h4 {
+    font-size: 1rem;
+  }
+
+  .producto p {
+    font-size: 0.9rem;
+  }
+
+  /* Botones más compactos */
+  .btn,
+  .agregar-carrito {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
