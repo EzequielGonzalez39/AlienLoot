@@ -401,8 +401,12 @@ footer {
   }
 
   header nav {
-    display: none; /* Oculta los enlaces */
-  }
+  display: none; /* oculta solo el nav */
+}
+
+#carrito-link {
+  display: block; /* o inline-block, para que se vea */
+}
 
   header .logo {
     display: flex;
