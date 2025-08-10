@@ -391,81 +391,67 @@ footer {
 
 /* aca va lo nuevo */
 
-/* Ajustes para pantallas móviles */
 @media (max-width: 768px) {
-
-  /* Header compacto */
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+  /* Header compacto y simplificado */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
   }
 
-  .logo-title {
+  header nav {
+    display: none; /* Oculta los enlaces */
+  }
+
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  header .logo img {
+    height: 30px;
+    width: auto;
+  }
+
+  header h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  header .cart-icon {
+    padding: 2px 6px; /* Un poco de padding lateral */
+    border-radius: 50%;
+  }
+
+  /* Productos: dos por fila y tipografía reducida */
+  .productos-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
-  .logo {
-    height: 40px;
+  .producto {
+    font-size: 12px;
+    text-align: center;
   }
 
-  .logo-title h1 {
-    font-size: 1.5rem;
-  }
-
-  /* Menú vertical */
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
-  }
-
-  .nav-links li a {
-    font-size: 0.95rem;
-  }
-
-  /* Padding general para que no pegue al borde */
-  body {
-    padding-top: 120px; /* aumenta un poco porque el header es más alto en mobile */
-  }
-
-  /* Filtros apilados */
-  .filtros-container {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 10px;
-  }
-
-  .filtros-container select,
-  .filtros-container input,
-  .filtros-container button {
-    width: 100%;
-    max-width: none;
-  }
-
-  /* Grid: dos productos por fila en móvil */
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  /* Ajuste de producto para que quepan dos por fila */
   .producto img {
-    height: 140px;
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
   }
 
-  .producto h4 {
-    font-size: 1rem;
+  .producto h3 {
+    font-size: 14px;
+    margin: 5px 0;
   }
 
   .producto p {
-    font-size: 0.9rem;
-  }
-
-  /* Botones más compactos */
-  .btn,
-  .agregar-carrito {
-    padding: 10px;
-    font-size: 0.9rem;
+    font-size: 12px;
+    margin: 0;
   }
 }
+
