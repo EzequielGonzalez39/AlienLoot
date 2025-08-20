@@ -226,6 +226,30 @@ footer {
 }
 
 /* Botón agregar al carrito (individual por producto) */
+
+/* Contador del carrito en el header */
+#carrito-link {
+  position: relative; /* Para posicionar el contador relativo al carrito */
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -6px; /* Ajusta verticalmente */
+  right: -6px; /* Ajusta horizontalmente */
+  background-color: red;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #000; /* opcional, para separar del fondo */
+}
+
+
 .agregar-carrito {
   margin-top: 12px;
   background-color: #1ebd5c;
@@ -387,30 +411,35 @@ footer {
   color: #e0e0e0;
 }
 
-
-
 /* aca va lo nuevo */
 
 @media (max-width: 768px) {
   /* Header compacto y simplificado */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-  }
-
-  header nav {
-  display: none; /* oculta solo el nav */
+  .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
 }
 
-#carrito-link {
-  display: block; /* o inline-block, para que se vea */
+.nav-links {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.nav-links li {
+  display: none;
+}
+
+.nav-links li:last-child {
+  display: flex;
+  margin-left: auto;
 }
 
   header .logo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 5px;
   }
 
@@ -457,5 +486,172 @@ footer {
     font-size: 12px;
     margin: 0;
   }
+
+
+
+
+
+  
 }
 
+
+
+@media (max-width: 768px) {
+  /* Botón del carrito en header más chico */
+  .boton-carrito-visual {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  /* Panel del carrito más compacto */
+  .carrito-panel {
+    padding: 12px;
+    max-width: 90%;
+    font-size: 0.65rem;
+  }
+
+  .carrito-panel h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .item-carrito {
+    font-size: 0.85rem;
+    padding: 6px 0;
+  }
+
+  .item-carrito span {
+    min-width: 50px;
+    font-size: 0.8rem;
+  }
+
+  .carrito-footer {
+  display: flex;
+  flex-direction: column; /* total arriba, botones abajo */
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carrito-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* contenedor solo para los botones */
+.carrito-footer .botones {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+#vaciar-carrito,
+.btn-whatsapp {
+  flex: 1;              /* ocupan el mismo ancho */
+  max-width: 45%;       /* nunca más de la mitad */
+  padding: 6px 8px;
+  font-size: 0.85rem;
+}
+
+  #total-carrito {
+    font-size: 1rem;
+  }
+
+  .item-carrito input.cantidad {
+    width: 40px;
+    font-size: 0.8rem;
+    padding: 3px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Item completo */
+  .item-carrito {
+    font-size: 0.75rem; /* achica el texto general */
+    padding: 4px 0;
+    gap: 6px;
+  }
+
+  /* Nombre del producto */
+  .item-carrito strong {
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Cantidad y precio */
+  .item-carrito label,
+  .item-carrito span {
+    font-size: 0.7rem;
+  }
+
+  /* Input cantidad */
+  .item-carrito input.cantidad {
+    width: 40px;
+    padding: 2px;
+    font-size: 0.7rem;
+  }
+
+  /* Botón eliminar */
+  .item-carrito .eliminar-item {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+    margin-left: 5px;
+  }
+
+  /* Ajustes del footer del carrito para celular */
+  .carrito-footer {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  /* Ajuste de filtros para móvil */
+  .filtros {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .filtros select {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Buscador más pequeño */
+  #buscador {
+    max-width: 250px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .buscador-container {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    gap: 10px; /* espacio entre productos */
+  }
+
+  .producto {
+    font-size: 12px; /* opcional: achicar texto en móvil */
+    padding: 10px;   /* opcional: menos padding */
+  }
+
+  .producto img {
+    height: 120px; /* más pequeña que en desktop */
+    object-fit: contain; /* mantiene proporción */
+    width: 100%; /* se ajusta al ancho del producto */
+  }
+
+}
